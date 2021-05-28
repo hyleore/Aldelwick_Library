@@ -1,3 +1,6 @@
+let inputText;
+let correctAnswer;
+
 class Exercice1 extends Phaser.Scene{
     constructor(){
         super('Exercice1')
@@ -38,7 +41,7 @@ class Exercice1 extends Phaser.Scene{
         this.add.image(640, 540,'auchinleck1').setScale(1.5);
 
         // texte input
-        var inputText = this.add.rexInputText(
+        inputText = this.add.rexInputText(
             // x, y, width, height, config
             1280, 540, 600, 800, {
             // config de la zone de texte
@@ -58,8 +61,41 @@ class Exercice1 extends Phaser.Scene{
             borderColor: '#DEB083',
         })
         .resize(600, 800)
-        .setOrigin(0.5)
+        .setOrigin(0.5);
+
+        correctAnswer = 'Ceci est un texte';
     }
     
-    update() {}
+    update() {
+        // fonction pour checker si une chaîne est un mot https://codesource.io/building-a-word-counter-in-javascript/
+        // PAS TERMINÉ DE MODIFIER DONC NE FONCTIONNERA PAS
+        function isWord(str) {
+            var alphaNumericFound = false;
+            for (var i = 0; i < str.length; i++){
+              var code = str.charCodeAt(i);
+              if ((code > 47 && code < 58) || // numeric (0-9)
+                  (code > 64 && code < 91) || // upper alpha (A-Z)
+                  (code > 96 && code < 123)) { // lower alpha (a-z)
+                alphaNumericFound = true;
+                return alphaNumericFound;
+              }
+            }
+            return alphaNumericFound;
+          }
+
+        for (var i = 0; i < inputText.length; i++) {
+            if (inputText[i] !== ' ' && isWord(inputText[i])) {
+            checkAnswer(inputText);
+            }
+        }
+
+        function checkAnswer(){
+        if (inputText != correctAnswer){
+            console.log('faux !')
+        }
+        }
+        // bon je pense que je suis pas partie dans la bonne direction là...
+
+    }
+
 }

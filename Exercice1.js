@@ -63,39 +63,55 @@ class Exercice1 extends Phaser.Scene{
         .resize(600, 800)
         .setOrigin(0.5);
 
-        correctAnswer = 'Ceci est un texte';
+        correctAnswer = 'réponse correcte ici';
     }
     
     update() {
-        // fonction pour checker si une chaîne est un mot https://codesource.io/building-a-word-counter-in-javascript/
-        // PAS TERMINÉ DE MODIFIER DONC NE FONCTIONNERA PAS
-        function isWord(str) {
-            var alphaNumericFound = false;
-            for (var i = 0; i < str.length; i++){
-              var code = str.charCodeAt(i);
-              if ((code > 47 && code < 58) || // numeric (0-9)
-                  (code > 64 && code < 91) || // upper alpha (A-Z)
-                  (code > 96 && code < 123)) { // lower alpha (a-z)
-                alphaNumericFound = true;
-                return alphaNumericFound;
-              }
-            }
-            return alphaNumericFound;
-          }
-
-        for (var i = 0; i < inputText.length; i++) {
-            if (inputText[i] !== ' ' && isWord(inputText[i])) {
-            checkAnswer(inputText);
-            }
-        }
-
-        function checkAnswer(){
-        if (inputText != correctAnswer){
-            console.log('faux !')
-        }
-        }
-        // bon je pense que je suis pas partie dans la bonne direction là...
-
+        inputText.on('textchange', function(inputText, e){
+            wordFinder();
+        });
     }
 
+}
+
+// checker si une chaîne est un mot
+function isWord(str) {
+    var alphaNumericFound = false;
+    for (var i = 0; i < str.length; i++) {
+        var code = str.charCodeAt(i);
+        if ((code > 47 && code < 58) || // numeric (0-9)
+            (code > 64 && code < 91) || // upper alpha (A-Z)
+            (code > 96 && code < 123)) { // lower alpha (a-z)
+            alphaNumericFound = true;
+        return alphaNumericFound;
+        }
+    }
+    return alphaNumericFound;
+}
+
+function wordFinder(text) {
+    var text = inputText.text.split(' ');
+    var wordCount = 0;
+    for (var i = 0; i < text.length; i++) {
+      if (text[i] !== ' ' && isWord(text[i])) {
+          wordCount++;
+      }
+    }
+    console.log('word count is: ' + wordCount);
+    wordChecker();
+}
+
+function wordChecker(text) {
+    var text = inputText.text.split(' ');
+    var correctAnswer_array = correctAnswer.split(' ');
+    // console.log('checker est activé')
+
+    for (let i in text) {
+        if(text[i].toLowerCase() == correctAnswer_array[i].toLowerCase()){
+            inputText.setFontColor('green');
+        }
+        else {
+            inputText.setFontColor('red');
+        }
+      }
 }

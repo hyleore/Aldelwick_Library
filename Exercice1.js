@@ -1,5 +1,6 @@
 let inputText;
 let correctAnswer;
+let textBox;
 
 class Exercice1 extends Phaser.Scene{
     constructor(){
@@ -29,6 +30,10 @@ class Exercice1 extends Phaser.Scene{
 
         // plugin pour texte input
         this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
+        
+        // plugin pour textbox
+        this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
+
     }
 
     create(){
@@ -64,17 +69,56 @@ class Exercice1 extends Phaser.Scene{
         .setOrigin(0.5);
 
         correctAnswer = 'réponse correcte ici';
+
+
+        // textbox
+        // erreur "this.parent is undefined"
+        textBox = this.rexUI.add.textBox({
+            x: 0,
+            y: 0,
+            width: 500,
+            height: 100,
+        
+            orientation: 'top-to-bottom',
+        
+            // icon: iconGameObject,
+            // iconMask: false,
+            // text: textGameObject,
+            // action: actionGameObject,
+            // actionMask: false,
+        
+            // space: {
+            //     left: 0,
+            //     right: 0,
+            //     top: 0,
+            //     bottom: 0,
+        
+            //     icon: 0,
+            //     text: 0,
+            // },
+        
+            // name: '',
+            // draggable: false,
+        
+            // page: { maxLines: undefined },
+            // type: { speed: 333 }
+        
+        });
+            
+
+
     }
     
     update() {
         inputText.on('textchange', function(inputText, e){
-            wordFinder();
+            wordChecker();
         });
     }
 
 }
 
 // checker si une chaîne est un mot
+// source du code de base, modifié : https://codesource.io/building-a-word-counter-in-javascript/
 function isWord(str) {
     var alphaNumericFound = false;
     for (var i = 0; i < str.length; i++) {
@@ -89,25 +133,13 @@ function isWord(str) {
     return alphaNumericFound;
 }
 
-function wordFinder(text) {
-    var text = inputText.text.split(' ');
-    var wordCount = 0;
-    for (var i = 0; i < text.length; i++) {
-      if (text[i] !== ' ' && isWord(text[i])) {
-          wordCount++;
-      }
-    }
-    console.log('word count is: ' + wordCount);
-    wordChecker();
-}
-
-function wordChecker(text) {
-    var text = inputText.text.split(' ');
+function wordChecker(words) {
+    var words = inputText.text.split(' ');
     var correctAnswer_array = correctAnswer.split(' ');
     // console.log('checker est activé')
 
-    for (let i in text) {
-        if(text[i].toLowerCase() == correctAnswer_array[i].toLowerCase()){
+    for (let i in words) {
+        if(words[i].toLowerCase() == correctAnswer_array[i].toLowerCase()){
             inputText.setFontColor('green');
         }
         else {

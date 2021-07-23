@@ -23,7 +23,6 @@ class Exercice1 extends Phaser.Scene{
     this.load.on('complete', function () {
 
         progress.destroy();
-
     });
 
         this.load.image('auchinleck1','assets/auchinleck_folio_1r.png')
@@ -32,8 +31,7 @@ class Exercice1 extends Phaser.Scene{
         this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
         
         // plugin pour textbox
-        this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
-
+        // this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
     }
 
     create(){
@@ -46,6 +44,13 @@ class Exercice1 extends Phaser.Scene{
         this.add.image(640, 540,'auchinleck1').setScale(1.5);
 
         // texte input
+
+        // régler problèmes de pointer events
+        // ??? franchement je trouve pas et ça me soûle
+        // en gros ce qu'il faudrait c'est que #jeu ait 'pointer-events: none' A PART ICI où il aurait
+        // 'pointer-events: all' - ça marcherait. mais je sais pas comment avoir un CSS
+        // qui s'applique seulement sur une scène.
+
         inputText = this.add.rexInputText(
             // x, y, width, height, config
             1280, 540, 600, 800, {
@@ -73,13 +78,13 @@ class Exercice1 extends Phaser.Scene{
 
         // textbox
         // erreur "this.parent is undefined"
-        textBox = this.rexUI.add.textBox({
-            x: 0,
-            y: 0,
-            width: 500,
-            height: 100,
+        // textBox = this.rexUI.add.textBox({
+        //     x: 0,
+        //     y: 0,
+        //     width: 500,
+        //     height: 100,
         
-            orientation: 'top-to-bottom',
+        //     orientation: 'top-to-bottom',
         
             // icon: iconGameObject,
             // iconMask: false,
@@ -103,7 +108,7 @@ class Exercice1 extends Phaser.Scene{
             // page: { maxLines: undefined },
             // type: { speed: 333 }
         
-        });
+        // });
             
 
 

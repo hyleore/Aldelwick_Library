@@ -2,4 +2,15 @@ canvas{
     display : block;
     margin : 0px;
     background-color: #EFDECD;
+    pointer-events: all !important;
+}
+
+/* corriger problèmes de clic et hover causés par le plugin d'input*/
+#jeu {
+    pointer-events: none;
+}
+
+/* rétablir les clic et hover dans la zone de texte */
+#jeu > div > textarea {
+    pointer-events: all !important;
 }

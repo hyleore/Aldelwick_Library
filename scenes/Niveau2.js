@@ -22,9 +22,6 @@ class Niveau2 extends Phaser.Scene{
     });
 
     this.load.image('auchinleck1','assets/auchinleck_folio_1r.png')
-        
-    // plugin pour textbox
-    // this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI', 'rexUI');
     }
 
     create(){
@@ -35,7 +32,7 @@ class Niveau2 extends Phaser.Scene{
         // background.fillRect(0, 0, 1920, 1080);
         reinitialiseInput();
 
-        this.add.image(640, 540,'auchinleck1').setScale(1.5);
+        this.add.image(390, 540,'auchinleck1').setScale(1.5);
 
 
 

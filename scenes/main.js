@@ -13,19 +13,37 @@ class Main extends Phaser.Scene {
 init() {}
 
 preload () {
+    // barre de progrès, source : https://github.com/photonstorm/phaser3-examples/blob/master/public/src/loader/loader%20events/load%20progress.js
+    var progress = this.add.graphics();
+
+    this.load.on('progress', function (value) {
+
+        progress.clear();
+        progress.fillStyle(0xffffff, 1);
+        progress.fillRect(480, 540, 960 * value, 10);
+
+    });
+
+    this.load.on('complete', function () {
+
+        progress.destroy();
+    });
+
     this.load.image('biblio2','/assets/library2.jpg');
     // plugin pour texte input
     this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
-    }
+
+    this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI');
+}
 
 create ()  {
-    var biblio2 = this.add.image(0,0,'biblio2').setOrigin(0);
-    biblio2.width = config.width; // je me réfère à la width de config pour adapter à la taille du jeu!
+    // var biblio2 = this.add.image(0,0,'biblio2').setOrigin(0);
+    // biblio2.width = config.width; // je me réfère à la width de config pour adapter à la taille du jeu!
 
     // zone de texte input
     inputText = this.add.rexInputText(
         // x, y, width, height, config
-        1280, 540, 600, 800, {
+        1030, 540, 600, 800, {
         // config de la zone de texte
 
         // propriétés
@@ -44,6 +62,13 @@ create ()  {
     })
     .resize(600, 800)
     .setOrigin(0.5);
+
+    var textBox = scene.rexUI.add.textBox(config);  // ne marche pas : 'scene is not defined'
+    // var textBox = this.scene.rexUI.add.textBox(config); // ne marche pas : 'this.scene.rexUI is undefined'
+    // var textBox = rexUI.add.textBox(config); // ne marche pas : 'rexUI is not defined'
+    // var textBox = this.rexUI.add.textBox(config); // ne marche pas : 'this.parent is undefined'
+    // var textBox = this.add.textBox(config); // ne marche pas : 'this.add.textBox is not a function'
+    
 
     this.scene.launch('Niveau1');
 }

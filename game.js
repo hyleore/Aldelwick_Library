@@ -12,7 +12,7 @@ const config = {
     parent: 'jeu',
     dom: {
         createContainer: true
-    },   
+    },
 };     
 
 let game = new Phaser.Game(config);

@@ -1,13 +1,14 @@
 let inputText;
 let correctAnswer;
-let textBox;
+
 
 class Main extends Phaser.Scene {
 
     constructor () {
         super({
-            key: 'Main'
+            key: 'Main',
         });
+
     }
 
 init() {}
@@ -33,7 +34,12 @@ preload () {
     // plugin pour texte input
     this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
 
-    this.load.scenePlugin('rexuiplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js', 'rexUI');
+    this.load.scenePlugin({
+        key: 'rexuiplugin',
+        url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
+        sceneKey: 'rexUI'
+    });
+    
 }
 
 create ()  {
@@ -63,11 +69,34 @@ create ()  {
     .resize(600, 800)
     .setOrigin(0.5);
 
-    var textBox = scene.rexUI.add.textBox(config);  // ne marche pas : 'scene is not defined'
-    // var textBox = this.scene.rexUI.add.textBox(config); // ne marche pas : 'this.scene.rexUI is undefined'
-    // var textBox = rexUI.add.textBox(config); // ne marche pas : 'rexUI is not defined'
-    // var textBox = this.rexUI.add.textBox(config); // ne marche pas : 'this.parent is undefined'
-    // var textBox = this.add.textBox(config); // ne marche pas : 'this.add.textBox is not a function'
+
+    var textBox = this.rexUI.add.textBox(
+        // CONFIGURATION DE LA TEXTBOX : A FAIRE !
+        //{
+        // orientation: 0,
+
+        // background: backgroundGameObject, // Game object of background, optional.
+        // // This background game object will be resized to fit the size of textBox.
+        // icon: iconGameObject, // Game object of icon, optional.
+        // iconMask: false, // Set true to add a circle mask on icon game object.
+        // text: textGameObject, // cf phaser notes for more explanations
+        // action: actionGameObject, // Game object of action icon, optional.
+        // actionMask: false, // Set true to add a circle mask on action icon game object.
+    
+        // space: {
+        //     // space of bounds
+        //     left: 0,
+        //     right: 0,
+        //     top: 0,
+        //     bottom: 0,
+    
+        //     icon: 0, // Space between icon game object and text game object.
+        //     text: 0, // Space between text game object and action icon game object.
+        //},    
+    //}
+    );
+
+
     
 
     this.scene.launch('Niveau1');

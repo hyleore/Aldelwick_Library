@@ -25,12 +25,8 @@ class Title extends Phaser.Scene {
         });
 
         button.on('pointerdown', pointer => {
-            // profitons-en pour récupérer
-            // les coordonnées du click...
             let touchX = pointer.x;
             let touchY = pointer.y;
-            // et les passer à la scène 3
-            // PAS SUR QUE J'AIE BESOIN DE CA
             this.scene.start('Main',[touchX,touchY])
         },this);
 

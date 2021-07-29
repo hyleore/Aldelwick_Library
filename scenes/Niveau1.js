@@ -35,8 +35,6 @@ class Niveau1 extends Phaser.Scene{
 
         this.add.image(390, 540,'auchinleck1').setScale(1.5);
 
-
-
         correctAnswer = 'réponse correcte ici';
 
         // // test pour scènes séquencielles de niveaux (fonctionne !)

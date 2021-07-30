@@ -70,36 +70,44 @@ create ()  {
     .setOrigin(0.5);
 
 
-    var textBox = this.rexUI.add.textBox(
-        // CONFIGURATION DE LA TEXTBOX : A FAIRE !
-        //{
-        // orientation: 0,
+    var textBox = this.rexUI.add.textBox({
+        orientation: 1,
 
-        // background: backgroundGameObject, // Game object of background, optional.
-        // // This background game object will be resized to fit the size of textBox.
-        // icon: iconGameObject, // Game object of icon, optional.
+        background: this.rexUI.add.roundRectangle(0, 0, 2, 2, 20, 0xD96460), // Game object of background, optional.
+        // This background game object will be resized to fit the size of textBox.
+        icon: this.rexUI.add.roundRectangle(0, 0, 2, 2, 20, 0x000000), // Game object of icon, optional.
         // iconMask: false, // Set true to add a circle mask on icon game object.
-        // text: textGameObject, // cf phaser notes for more explanations
-        // action: actionGameObject, // Game object of action icon, optional.
+        text: this.add.text(0, 0, 'hello', {
+            fontFamily: 'Courier',
+            fontSize: '16px',
+            fontStyle: '',
+            maxLines: 3,
+            wordWrap: {
+                width: 200,
+            }
+        }), // cf phaser notes for more explanations
+        action: this.rexUI.add.roundRectangle(0, 0, 2, 2, 20, 0x000000), // Game object of action icon, optional.
         // actionMask: false, // Set true to add a circle mask on action icon game object.
     
-        // space: {
-        //     // space of bounds
-        //     left: 0,
-        //     right: 0,
-        //     top: 0,
-        //     bottom: 0,
+        space: {
+            // space of bounds
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
     
-        //     icon: 0, // Space between icon game object and text game object.
-        //     text: 0, // Space between text game object and action icon game object.
-        //},    
-    //}
-    );
+            icon: 0, // Space between icon game object and text game object.
+            text: 0, // Space between text game object and action icon game object.
+        },    
+    })
+    // .setOrigin(0.5)
+    .start('content', 100);
 
 
     
 
     this.scene.launch('Niveau1');
+
 }
 
 update() {}

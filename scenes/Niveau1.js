@@ -33,7 +33,10 @@ class Niveau1 extends Phaser.Scene{
         // background.fillRect(0, 0, 1920, 1080);
         reinitialiseInput();
 
-        this.add.image(390, 540,'auchinleck1').setScale(1.5);
+        // this.add.image(100, 250,'auchinleck1').setScale(1).setOrigin(0);
+
+        // rectangle à remplacer par une image !
+        this.add.rectangle(100,250,600,800, 0xa67a60).setOrigin(0);
 
         correctAnswer = 'réponse correcte ici';
 

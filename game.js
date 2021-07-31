@@ -2,7 +2,7 @@ const config = {
     width: 1920,
     height: 1080,
     backgroundColor: '#EFDECD',
-    scene : [Test, Title, Main, End, Niveau1, Niveau2],
+    scene : [Title, Main, End, Niveau1, Niveau2, Test],
     scale: {
         mode: Phaser.Scale.FIT,
         autoCenter: Phaser.Scale.CENTER_BOTH,

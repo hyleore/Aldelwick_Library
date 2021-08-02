@@ -1,19 +1,7 @@
 let inputText;
 let correctAnswer;
-// var content = {'Phaser is a fast, free, and fun open source HTML5 game framework that offers WebGL and Canvas rendering across desktop and mobile web browsers. Games can be compiled to iOS, Android and native apps by using 3rd party tools. You can use JavaScript or TypeScript for development.'}
 
-var content = ['Phaser is a fast, free, and fun open source HTML5 game framework that offers WebGL and Canvas rendering across desktop and mobile web browsers. ',
-'Games can be compiled to iOS, Android and native apps by using 3rd party tools.',
-'You can use JavaScript or TypeScript for development.'];
-
-
-
-// var content = {
-//     0: 'Phaser is a fast, free, and fun open source HTML5 game framework that offers WebGL and Canvas rendering across desktop and mobile web browsers. ',
-//     1: 'Games can be compiled to iOS, Android and native apps by using 3rd party tools.',
-//     2: 'You can use JavaScript or TypeScript for development.',
-// }
-var content2 = 'You can use JavaScript or TypeScript for development.';
+var content = `Phaser is a fast, free, and fun open source HTML5 game framework that offers WebGL and Canvas rendering across desktop and mobile web browsers. \f\n Games can be compiled to iOS, Android and native apps by using 3rd party tools. \f\n You can use JavaScript or TypeScript for development.`;
 
 class Main extends Phaser.Scene {
 
@@ -128,7 +116,12 @@ create ()  {
     
             icon: 30, // Space between icon game object and text game object.
             text: 20, // Space between text game object and action icon game object.
-        },    
+        },
+
+        page: { 
+            maxLines: undefined,
+            pageBreak: '\f\n',
+        },
     })
     .setOrigin(0)
     .setInteractive()

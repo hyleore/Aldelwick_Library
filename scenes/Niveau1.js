@@ -21,8 +21,8 @@ class Niveau1 extends Phaser.Scene{
         progress.destroy();
     });
 
-    this.load.image('auchinleck1','assets/auchinleck_folio_1r.png')
-        
+    this.load.image('niv1','assets/J2D_niv1.png')
+    this.load.text ('niv1_rep', 'assets/J2d_niv1_rep.txt')
      }
 
     create(){
@@ -33,12 +33,12 @@ class Niveau1 extends Phaser.Scene{
         // background.fillRect(0, 0, 1920, 1080);
         reinitialiseInput();
 
-        // this.add.image(100, 250,'auchinleck1').setScale(1).setOrigin(0);
+        this.add.image(100, 250,'niv1').setScale(1/3).setOrigin(0);
 
         // rectangle à remplacer par une image !
-        this.add.rectangle(100,250,600,800, 0xa67a60).setOrigin(0);
+        // this.add.rectangle(100,250,600,800, 0xa67a60).setOrigin(0);
 
-        correctAnswer = 'réponse correcte ici';
+        correctAnswer = this.cache.text.get('niv1_rep');
 
         // // test pour scènes séquencielles de niveaux (fonctionne !)
         // setTimeout(()=>{

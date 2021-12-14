@@ -237,10 +237,10 @@ function isWord(str) {
 function wordChecker(words) {
     var words = inputText.text.split(' ');
     var correctAnswer_array = correctAnswer.split(' ');
-    // console.log('checker est activé')
 
     for (let i in words) {
         if(words[i].toLowerCase() == correctAnswer_array[i].toLowerCase()){
+            // https://www.textfixer.com/tutorials/javascript-line-breaks.php
             inputText.setFontColor('green');
         }
         else {

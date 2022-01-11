@@ -1,7 +1,9 @@
+content = `Phaser is a fast, free, and fun open source HTML5 game framework that offers WebGL and Canvas rendering across desktop and mobile web browsers. \f\n Games can be compiled to iOS, Android and native apps by using 3rd party tools. \f\n You can use JavaScript or TypeScript for development.`;
 class Niveau1 extends Phaser.Scene{
     constructor(){
         super('Niveau1')
     }
+    
 
     preload(){
 

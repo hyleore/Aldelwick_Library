@@ -1,4 +1,4 @@
-content = `Phaser is a fast, free, and fun open source HTML5 game framework that offers WebGL and Canvas rendering across desktop and mobile web browsers. \f\n Games can be compiled to iOS, Android and native apps by using 3rd party tools. \f\n You can use JavaScript or TypeScript for development.`;
+
 class Niveau1 extends Phaser.Scene{
     constructor(){
         super('Niveau1')
@@ -23,22 +23,14 @@ class Niveau1 extends Phaser.Scene{
         progress.destroy();
     });
 
-    this.load.image('niv1','assets/J2D_niv1.png')
-    this.load.text ('niv1_rep', 'assets/J2d_niv1_rep.txt')
+    this.load.image('niv1','assets/J2D_niv1.png');
+    this.load.text ('niv1_rep', 'assets/J2d_niv1_rep.txt');
      }
 
     create(){
-
-        // // si besoin d'un fond différent reprendre ceci :)
-        // let background = this.add.graphics();
-        // background.fillStyle(0xEFDECD,1.0);
-        // background.fillRect(0, 0, 1920, 1080);
         reinitialiseInput();
 
         this.add.image(100, 250,'niv1').setScale(1/3).setOrigin(0);
-
-        // rectangle à remplacer par une image !
-        // this.add.rectangle(100,250,600,800, 0xa67a60).setOrigin(0);
 
         correctAnswer = this.cache.text.get('niv1_rep');
 
@@ -46,7 +38,8 @@ class Niveau1 extends Phaser.Scene{
         // setTimeout(()=>{
         //     this.scene.start('Niveau2')
         // },10000);
-
+        content = `Phaser is a fast, free, and fun open source HTML5 game framework that offers WebGL and Canvas rendering across desktop and mobile web browsers. \f\n Games can be compiled to iOS, Android and native apps by using 3rd party tools. \f\n You can use JavaScript or TypeScript for development.`;
+        textBox.start(content,30);
     }
     
     update() {

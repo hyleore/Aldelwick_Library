@@ -1,3 +1,5 @@
+let textBox
+
 class Main extends Phaser.Scene {
 
     constructor () {
@@ -55,7 +57,7 @@ create ()  {
         fontStyle: '',
     });
     // text box (version 1)
-    var textBox = this.rexUI.add.textBox({
+    textBox = this.rexUI.add.textBox({
         x: 100,
         y: 80,
         orientation: 0,
@@ -113,13 +115,13 @@ create ()  {
     }, textBox)
     .on('pageend', function () {
         var actionIcon = this.getElement('action')
-        if (this.isLastPage) {
-            actionIcon.setVisible(false);
-            return;
-        } else {
+        // if (this.isLastPage) {
+        //     actionIcon.setVisible(false);
+        //     return;
+        // } else {
             actionIcon.setVisible(true);
-        }
-    }).start(content,30);
+        // }
+    })
 
     this.scene.launch('Tuto1');
 

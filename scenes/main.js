@@ -71,7 +71,7 @@ create ()  {
         // iconMask: false, // Set true to add a circle mask on icon game object.
         text: this.add.text(0, 0, '', {
             color: '#fff',
-            fontFamily: 'Courier',
+            fontFamily: 'Trebuchet MS',
             fontSize: '24px',
             fontStyle: '',
             maxLines: 4,
@@ -123,7 +123,7 @@ create ()  {
         // }
     })
 
-    this.scene.launch('Tuto1');
+    this.scene.launch('Tuto3');
 
 }
 

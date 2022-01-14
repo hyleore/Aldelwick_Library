@@ -29,6 +29,7 @@ preload () {
     });
 
     this.load.image('biblio2','/assets/library2.jpg');
+    this.load.image('minims10','assets/tutorial_elements/minims_anim/J2D_minims_10.png');
     
     this.load.plugin('rextextpageplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rextextpageplugin.min.js', true);
 
@@ -123,7 +124,7 @@ create ()  {
         // }
     })
 
-    this.scene.launch('Tuto3');
+    this.scene.launch('Tuto1');
 
 }
 

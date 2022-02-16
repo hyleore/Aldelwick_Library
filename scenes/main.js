@@ -45,9 +45,8 @@ preload () {
 
 create ()  {
     var biblio2 = this.add.image(0,0,'biblio2').setOrigin(0);
-    biblio2.width = config.width; // je me réfère à la width de config pour adapter à la taille du jeu!
-
-
+    biblio2.displayWidth = config.width; 
+    biblio2.displayHeight = config.height;
     // textbox
     var rectangle = this.add.rectangle(0,0,2,2, 0xa67a60);
     var icon = this.add.image(0,0,'quill-icon').setDisplaySize(100,100);

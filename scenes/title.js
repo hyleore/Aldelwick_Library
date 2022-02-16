@@ -12,7 +12,8 @@ class Title extends Phaser.Scene {
     }
     create () {
         var biblio = this.add.image(0,0,'biblio').setOrigin(0);
-        biblio.width = config.width; // je me réfère à la width de config pour adapter à la taille du jeu!
+        biblio.displayWidth = config.width; // je me réfère à la width de config pour adapter à la taille du jeu!
+        biblio.displayHeight = config.height;
         this.add.text(config.width/2, config.height/2,'Welcome.',
         { font: "72px Times", fill: "#ffffff", align: "center" })
         .setOrigin(0.5);

@@ -42,7 +42,7 @@ class Tuto3 extends Phaser.Scene{
         this.add.sprite(100, 250, 'minims').setScale(1).setOrigin(0)
             .play('write');
 
-        content = 'Some letters can look very similar when they are mostly made of what we call ‘minims’. \f\n\ This is the word ‘minim’. \f\n\ Minims are the short, straight, downwards strokes which appear in letters like ‘m’, ‘u’, ‘i’, ‘n’, and ‘v’. \f\n\ (‘u’ and ‘v’ used to be written the same way - please use the one most fitting to the meaning of the word, which is usually recognisable through the other letters and words, in your transcriptions.) \f\n\ As you see, letters with only minims can make a text very confusing. \f\n\ This is made even worse by the fact that they usually didn’t put a dot over ‘i’ - unless it was surrounded by many minims, like here. \f\n\ ';
+        content = 'Some letters can look very similar when they are mostly made of what we call ‘minims’. \f\n\ This is the word ‘minim’. \f\n\ Minims are the short, straight, downwards strokes which appear in letters like ‘m’, ‘u’, ‘i’, ‘n’, and ‘v’. \f\n\ (‘u’ and ‘v’ used to be written the same way - in your transcriptions, please use the one most fitting to the meaning of the word, which is usually recognisable through the other letters and words.) \f\n\ As you see, letters with only minims can make a text very confusing. \f\n\ This is made even worse by the fact that they usually didn’t put a dot over ‘i’ - unless it was surrounded by many minims, like here. \f\n\ ';
         textBox.start(content,30);
         textBox.on('complete', function() {
             this.scene.start('Tuto4');

@@ -6,6 +6,7 @@ class Tuto5 extends Phaser.Scene{
     }
 
     preload(){
+        this.load.image('thorn','assets/tutorial_elements/J2D_tutorial_thorn.png');
     }
 
     create(){

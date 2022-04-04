@@ -38,8 +38,11 @@ class Niveau1 extends Phaser.Scene{
         // setTimeout(()=>{
         //     this.scene.start('Niveau2')
         // },10000);
-        content = `Phaser is a fast, free, and fun open source HTML5 game framework that offers WebGL and Canvas rendering across desktop and mobile web browsers. \f\n Games can be compiled to iOS, Android and native apps by using 3rd party tools. \f\n You can use JavaScript or TypeScript for development.`;
+        content = 'Please type your transcription. If you need help, click on the icon with ‘?’.'
         textBox.start(content,30);
+        textBox.on('complete', function() {
+            textBox.stop;
+        }, this);
     }
     
     update() {

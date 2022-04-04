@@ -79,7 +79,7 @@ function wordChecker(words) {
     var correctAnswer_array = correctAnswer.split(' ');
 
     for (let i in words) {
-        if(words[i].toLowerCase() == correctAnswer_array[i].toLowerCase()){
+        if(words[i].toLowerCase().replace(/v/g, "u") == correctAnswer_array[i].toLowerCase()){
             // https://www.textfixer.com/tutorials/javascript-line-breaks.php
             inputText.setFontColor('green');
         }

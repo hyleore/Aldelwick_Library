@@ -1,5 +1,7 @@
 let inputText;
 let correctAnswer;
+var button;
+var help;
 
 class Niveau extends Phaser.Scene {
 
@@ -21,14 +23,15 @@ preload () {
         url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
         sceneKey: 'rexUI'
     });
+
+    this.load.image('button','assets/J2D_bouton_aide.png');
+    this.load.image('help','assets/J2D_help.png')
     
 }
 
-create ()  {
-    // var biblio2 = this.add.image(0,0,'biblio2').setOrigin(0);
-    // biblio2.width = config.width; // je me réfère à la width de config pour adapter à la taille du jeu!
 
-    // zone de texte input
+create ()  {
+
     inputText = this.add.rexInputText(
         // x, y, width, height, config
         750, 250, 600, 800, {
@@ -47,14 +50,29 @@ create ()  {
         color: '#331A00',
         backgroundColor: 'white',
         borderColor: '#DEB083',
-    }).setOrigin(0)
-    
+    }).setOrigin(0);
 
     this.scene.launch('Niveau1');
 
+    help = null; 
+    button = this.add.image(1720, 50,'button').setScale(0.3).setOrigin(0);
+    button
+    .setInteractive({ useHandCursor: true })
+    .on('pointerdown', function (pointer)
+    {
+        if (help != null) {
+            help.destroy();
+            help = null;
+        } else {
+            help = this.add.image(1360, 200, 'help').setScale(0.45).setOrigin(0);
+            // this.children.bringToTop(help);
+            // this.scene.bringToTop('Niveau');
+    }
+    }, this);
 }
 
-update() {}
+update() {
+}
 
 }
 

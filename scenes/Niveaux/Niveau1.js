@@ -34,11 +34,7 @@ class Niveau1 extends Phaser.Scene{
 
         correctAnswer = this.cache.text.get('niv1_rep');
 
-        // // test pour scènes séquencielles de niveaux (fonctionne !)
-        // setTimeout(()=>{
-        //     this.scene.start('Niveau2')
-        // },10000);
-        content = 'Please type your transcription. If you need help, click on the icon with ‘?’.'
+        content = 'Please type your transcription. If you need help, click on the button with ‘?’.'
         textBox.start(content,30);
         textBox.on('complete', function() {
             textBox.stop;

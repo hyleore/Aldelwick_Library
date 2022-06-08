@@ -1,4 +1,5 @@
-let textBox
+let textBox;
+let content;
 
 class Main extends Phaser.Scene {
 
@@ -113,17 +114,16 @@ create ()  {
             this.typeNextPage();
         }
     }, textBox)
-    .on('pageend', function () {
+    .on('pageend', function () { 
+        if (this.isLastPage) {
+            return;
+        } else {
         var actionIcon = this.getElement('action')
-        // if (this.isLastPage) {
-        //     actionIcon.setVisible(false);
-        //     return;
-        // } else {
-            actionIcon.setVisible(true);
-        // }
+        {actionIcon.setVisible(true); }
+        }
     })
 
-    this.scene.launch('Niveau');
+    this.scene.launch('Tuto1');
 
 }
 

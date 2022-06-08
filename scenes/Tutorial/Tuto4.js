@@ -30,8 +30,8 @@ class Tuto4 extends Phaser.Scene{
         this.add.sprite(100, 250, 'minims').setScale(1).setOrigin(0)
             .play('strokes');
 
-        content = 'These are the ancestors of the dot over the ‘i’ \f\n Don’t worry, it’s unlikely that you’ll have words as confusing as this specific one… just remember that if what you’re reading doesn’t seem to make sense, it might be because you are reading a different combination of the minims you see! \f\n ';
-        textBox.start(content,30)
+        content = 'These are the ancestors of the dot over the ‘i’ \f\n Don’t worry, you will not often see such confusing words… just remember that if what you are reading doesn’t seem to make sense, it might be because you need to think of a different combination of the minims you see! \f\n ';
+        textBox.start(content,35);
         textBox.on('complete', function() {
             this.scene.start('Tuto5');
         }, this);        

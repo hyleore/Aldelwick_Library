@@ -11,7 +11,7 @@ class Tuto8 extends Phaser.Scene{
 
     create(){
         this.add.image(100, 250,'s').setScale(1).setOrigin(0);
-        let content = 'It is the case for the letter ‘s’, which looked similar to an ‘f’ without the smaller vertical stroke. \f\n s'
+        let content = 'It is the case for the letter ‘s’, which looked similar to an ‘f’ without the smaller vertical stroke. \f\n '
         textBox.start(content,35);
         textBox.on('complete', function() {
             this.scene.start('Tuto9');

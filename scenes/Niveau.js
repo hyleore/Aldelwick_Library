@@ -52,8 +52,6 @@ create ()  {
         borderColor: '#DEB083',
     }).setOrigin(0);
 
-    this.scene.launch('Niveau1');
-
     help = null; 
     button = this.add.image(1720, 50,'button').setScale(0.3).setOrigin(0);
     button
@@ -69,6 +67,8 @@ create ()  {
             // this.scene.bringToTop('Niveau');
     }
     }, this);
+
+    this.scene.launch('Niveau1');
 }
 
 update() {

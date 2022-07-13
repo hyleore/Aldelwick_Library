@@ -34,11 +34,11 @@ class Niveau1 extends Phaser.Scene{
 
         correctAnswer = this.cache.text.get('niv1_rep');
 
-        content = 'Let’s see how you get on with this first page! The first letter is an illuminated ‘A’! Elsewhere, the names ‘Aldenwick’ and ‘Elvenmere’, our town and the sea, are not capitalised. If you need help, click on the button with ‘?’.'
+        content = 'Let’s see how you get on with this first page! The first letter is an illuminated ‘A’! Elsewhere, the names ‘Aldenwick’ and ‘Elvenmere’, our town and the sea, are not capitalised. If you need help, click on the button with ‘?’'
         textBox.start(content,30);
-        textBox.on('complete', function() {
-            textBox.stop;
-        }, this);
+        textBox.on('pageend', function() {
+            textBox.stop();
+        }, this);        
     }
     
     update() {

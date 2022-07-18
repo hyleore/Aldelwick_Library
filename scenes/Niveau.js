@@ -15,6 +15,22 @@ class Niveau extends Phaser.Scene {
 init() {}
 
 preload () {
+    // barre de progrès, source : https://github.com/photonstorm/phaser3-examples/blob/master/public/src/loader/loader%20events/load%20progress.js
+    var progress = this.add.graphics();
+
+    this.load.on('progress', function (value) {
+
+        progress.clear();
+        progress.fillStyle(0xffffff, 1);
+        progress.fillRect(480, 540, 960 * value, 10);
+
+    });
+
+    this.load.on('complete', function () {
+
+        progress.destroy();
+    });
+
     // plugin pour texte input
     this.load.plugin('rexinputtextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexinputtextplugin.min.js', true);
 
@@ -63,8 +79,6 @@ create ()  {
             help = null;
         } else {
             help = this.add.image(1360, 200, 'help').setScale(0.45).setOrigin(0);
-            // this.children.bringToTop(help);
-            // this.scene.bringToTop('Niveau');
     }
     }, this);
 

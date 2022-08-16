@@ -47,6 +47,8 @@ preload () {
 
 
 create ()  {
+    nextScene = null; 
+    game.scene.remove('Tuto');
 
     inputText = this.add.rexInputText(
         // x, y, width, height, config

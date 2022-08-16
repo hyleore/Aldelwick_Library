@@ -10,12 +10,11 @@ class Tuto10 extends Phaser.Scene{
     }
 
     create(){
+        currentScene = 'Tuto10';
+        nextScene = 'Tuto11';
         this.add.image(100, 250,'spaces').setScale(1).setOrigin(0);
         let content = 'As an example, the word you see here is ‘spaces’ \f\n Let’s look at another strange letter. \f\n '
         textBox.start(content,35);
-        textBox.on('complete', function() {
-            this.scene.start('Tuto11');
-        }, this);
     }
     
     update() {

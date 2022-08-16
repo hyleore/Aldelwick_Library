@@ -1,5 +1,3 @@
-
-
 class Tuto4 extends Phaser.Scene{
     constructor(){
         super({
@@ -14,7 +12,8 @@ class Tuto4 extends Phaser.Scene{
     }
 
     create(){
-        this.add.image(100, 250,'minims10').setScale(1).setOrigin(0);
+        currentScene = 'Tuto4';
+        nextScene = 'Tuto5';
 
         this.anims.create({
             key: 'strokes',
@@ -27,14 +26,11 @@ class Tuto4 extends Phaser.Scene{
             repeat: 0,
         });
 
-        this.add.sprite(100, 250, 'minims').setScale(1).setOrigin(0)
+        minims = this.add.sprite(100, 250, 'minims').setScale(1).setOrigin(0)
             .play('strokes');
 
         content = 'These are the ancestors of the dot over the ‘i’ \f\n Don’t worry, you will not often see such confusing words… just remember that if what you are reading doesn’t seem to make sense, it might be because you need to think of a different combination of the minims you see! \f\n ';
         textBox.start(content,35);
-        textBox.on('complete', function() {
-            this.scene.start('Tuto5');
-        }, this);        
     }
     
     update() {

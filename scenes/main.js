@@ -1,5 +1,18 @@
 let textBox;
 let content;
+let icon;
+let bouton;
+let currentScene;
+let nextScene;
+function startNextScene(){
+    if (nextScene === null){
+        textBox.stop();
+    }
+    else {
+        game.scene.start(nextScene);
+        game.scene.remove(currentScene);
+    }
+};
 
 class Main extends Phaser.Scene {
 
@@ -101,32 +114,34 @@ create ()  {
     })
     .setOrigin(0)
     .setInteractive()
-    .on('type', function() {
-        var actionIcon = this.getElement('action')
-        if (this.isTyping) {
-            actionIcon.setVisible(false);
-        }
-    },textBox) 
-    .on('pointerdown', function () {
-        if (this.isTyping) {
-            this.stop(true);
-        } else {
-            this.typeNextPage();
-        }
-    }, textBox)
-    .on('pageend', function () { 
-        if (this.isLastPage) {
-            return;
-        } else {
-        var actionIcon = this.getElement('action')
-        {actionIcon.setVisible(true); }
-        }
-    })
+    // .on('type', function() {
+    //     var actionIcon = this.getElement('action')
+    //     if (this.isTyping) {
+    //         actionIcon.setVisible(false);
+    //     }
+    // },textBox) 
+    // .on('pointerdown', function () {
+    //     if (this.isTyping) {
+    //         this.stop(true);
+    //     } else {
+    //         this.typeNextPage();
+    //     }
+    // }, textBox)
+    // .on('pageend', function () { 
+    //     if (this.isLastPage) {
+    //         return;
+    //     } else {
+    //     var actionIcon = this.getElement('action')
+    //     {actionIcon.setVisible(true); }
+    //     }
+    // })
 
-    this.scene.launch('Tuto1');
+    this.scene.launch('Tuto');
 
 }
 
-update() {}
+update() {
+      
+}
 
 }

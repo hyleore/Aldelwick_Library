@@ -21,7 +21,8 @@ The game takes place in a fantasy-like world in order to take inspiration from m
 Two manuscripts were used as inspirations for the script (handwriting) used in the game:
 - London, British Library, Harley 535, a fifteenth-century manuscript.
 - National Library of Scotland, Advocates MS 19.2.1 or The Auchinleck Manuscript, a fourteenth-century London manuscript, available online [here](https://auchinleck.nls.uk/contents.html)
-- *The Cambridge History of The Book in Britain, Volume 2, 1100-1400* (Nigel Morgan and Rodney M. Thompson, eds., Cambridge UP, 2008) was also helpful in creating the script for the game.
+
+*The Cambridge History of The Book in Britain, Volume 2, 1100-1400* (Nigel Morgan and Rodney M. Thompson, eds., Cambridge UP, 2008) was also helpful in creating the script for the game.
 ### Credits
 #### Images
 - Title scene: [giamboscaro on Unsplash](https://unsplash.com/photos/xLhKkk2tKkA)

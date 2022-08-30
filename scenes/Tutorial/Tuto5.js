@@ -12,7 +12,7 @@ class Tuto5 extends Phaser.Scene{
         minims.destroy();
         currentScene = 'Tuto5';
         nextScene = 'Tuto6';
-        let content = 'Finally, let’s look at some special letters. Some letters from ancient books are no longer used, or no longer written that way. \f\n ';       
+        let content = 'Now, let’s look at some special letters. \f\n Some letters from ancient books are no longer used, or no longer written that way. \f\n ';       
         textBox.start(content,35);
 
     }

@@ -26,7 +26,6 @@ class Main extends Phaser.Scene {
 init() {}
 
 preload () {
-    // barre de progrès, source : https://github.com/photonstorm/phaser3-examples/blob/master/public/src/loader/loader%20events/load%20progress.js
     var progress = this.add.graphics();
 
     this.load.on('progress', function (value) {
@@ -52,7 +51,6 @@ preload () {
         url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexuiplugin.min.js',
         sceneKey: 'rexUI'
     });
-    // icone pour le texte
     this.load.image('quill-icon','assets/quill.png');
     
 }
@@ -61,7 +59,7 @@ create ()  {
     var biblio2 = this.add.image(0,0,'biblio2').setOrigin(0);
     biblio2.displayWidth = config.width; 
     biblio2.displayHeight = config.height;
-    // textbox
+    
     var rectangle = this.add.rectangle(0,0,2,2, 0xa67a60);
     var icon = this.add.image(0,0,'quill-icon').setDisplaySize(100,100);
     var bouton = this.add.text(0,0, '➼', {
@@ -70,7 +68,7 @@ create ()  {
         fontSize: '30px',
         fontStyle: '',
     });
-    // text box (version 1)
+    
     textBox = this.rexUI.add.textBox({
         x: 100,
         y: 80,
@@ -78,11 +76,8 @@ create ()  {
         width: 0,
         height: 0,
 
-        // background: this.rexUI.add.roundRectangle(0, 0, 2, 2, 20, '#000'), // Game object of background, optional.
-        // This background game object will be resized to fit the size of textBox.
-        background: rectangle, // n'apparaît pas :((
-        icon: icon, // Game object of icon, optional.
-        // iconMask: false, // Set true to add a circle mask on icon game object.
+        background: rectangle,
+        icon: icon, 
         text: this.add.text(0, 0, '', {
             color: '#fff',
             fontFamily: 'Trebuchet MS',
@@ -92,12 +87,10 @@ create ()  {
             wordWrap: {
                 width: 1000,
             }
-        }), // cf phaser notes for more explanations
-        action: bouton, // Game object of action icon, optional.
-        // actionMask: false, // Set true to add a circle mask on action icon game object.
+        }),
+        action: bouton,
     
         space: {
-            // space of bounds
             left: 20,
             right: 20,
             top: 20,
@@ -114,27 +107,6 @@ create ()  {
     })
     .setOrigin(0)
     .setInteractive()
-    // .on('type', function() {
-    //     var actionIcon = this.getElement('action')
-    //     if (this.isTyping) {
-    //         actionIcon.setVisible(false);
-    //     }
-    // },textBox) 
-    // .on('pointerdown', function () {
-    //     if (this.isTyping) {
-    //         this.stop(true);
-    //     } else {
-    //         this.typeNextPage();
-    //     }
-    // }, textBox)
-    // .on('pageend', function () { 
-    //     if (this.isLastPage) {
-    //         return;
-    //     } else {
-    //     var actionIcon = this.getElement('action')
-    //     {actionIcon.setVisible(true); }
-    //     }
-    // })
 
     this.scene.launch('Tuto');
 

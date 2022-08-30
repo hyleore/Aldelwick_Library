@@ -16,7 +16,7 @@ class Tuto3 extends Phaser.Scene{
         this.load.image('minims7','J2D_minims_7.png');
         this.load.image('minims8','J2D_minims_8.png');
         this.load.image('minims9','J2D_minims_9.png');
-        // code png to anim https://labs.phaser.io/edit.html?src=src/animation/animation%20from%20png%20sequence.js&v=3.55.2
+        // code pour animer à partir d'images png https://labs.phaser.io/edit.html?src=src/animation/animation%20from%20png%20sequence.js&v=3.55.2
     }
 
     create(){

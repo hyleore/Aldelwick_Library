@@ -15,7 +15,6 @@ class Niveau extends Phaser.Scene {
 init() {}
 
 preload () {
-    // barre de progrès, source : https://github.com/photonstorm/phaser3-examples/blob/master/public/src/loader/loader%20events/load%20progress.js
     var progress = this.add.graphics();
 
     this.load.on('progress', function (value) {
@@ -53,13 +52,8 @@ create ()  {
     inputText = this.add.rexInputText(
         // x, y, width, height, config
         750, 250, 600, 800, {
-        // config de la zone de texte
-
-        // propriétés
         type: 'textarea',
         placeholder: 'type here...',
-
-        // style
         align: 'left',
         padding: '20px',
         border: '10px solid',

@@ -31,11 +31,11 @@ class Title extends Phaser.Scene {
         biblio.displayWidth = config.width; 
         biblio.displayHeight = config.height;
         this.add.text(config.width/2, config.height/2,'Welcome.',
-        { font: "72px Times", fill: "#ffffff", align: "center" })
+        { font: "72px Times", fill: "#ffffff", align: "center"})
         .setOrigin(0.5);
         var button = this.add.text(config.width/2,config.height/2+100,
             'Click here to start game.',
-            { font: "italic 36px Times", fill: "#ffffff", align: "center" }).setOrigin(0.5);
+            {font: "italic 48px Times", fill: "#ffffff", align: "center", backgroundColor: "#360f0b", padding: 10}).setOrigin(0.5);
             
         button.setInteractive({
             useHandCursor: true,

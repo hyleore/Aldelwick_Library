@@ -2,6 +2,7 @@ let inputText;
 let correctAnswer;
 var button;
 var help;
+var done;
 
 class Niveau extends Phaser.Scene {
 
@@ -41,13 +42,14 @@ preload () {
 
     this.load.image('button','assets/J2D_bouton_aide.png');
     this.load.image('help','assets/J2D_help.png')
+    this.load.image('done','assets/J2D_bouton_done.png')
     
 }
 
 
 create ()  {
     nextScene = null; 
-    game.scene.remove('Tuto');
+    game.scene.stop('Tuto');
 
     inputText = this.add.rexInputText(
         // x, y, width, height, config
@@ -58,7 +60,7 @@ create ()  {
         padding: '20px',
         border: '10px solid',
         fontFamily: '"Times New Roman", Times, serif',
-        fontSize: '24px',
+        fontSize: '28px',
         color: '#331A00',
         backgroundColor: 'white',
         borderColor: '#DEB083',
@@ -78,6 +80,19 @@ create ()  {
     }
     }, this);
 
+    done = this.add.image(1720, 950, 'done').setScale(0.3).setOrigin(0);
+    done.setInteractive({ useHandCursor: true })
+    .on('pointerdown', function (pointer)
+    {
+        if (inputText.text != correctAnswer) {
+            content = "I think there are still some mistakes in your answer. Please look again, I'm sure you can figure it out!";
+            textBox.start(content,35);
+        } else {
+            console.log('réponse correcte. ajouter fonction pour passer à la suite.');
+            this.scene.start('End');
+        }
+    }, this);
+
     this.scene.launch('Niveau1');
 }
 
@@ -86,7 +101,7 @@ update() {
 
 }
 
-// checker si une chaîne est un mot
+// vérifier si une chaîne est un mot
 // source du code de base, modifié : https://codesource.io/building-a-word-counter-in-javascript/
 function isWord(str) {
     var alphaNumericFound = false;

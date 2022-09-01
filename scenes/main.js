@@ -10,7 +10,7 @@ function startNextScene(){
     }
     else {
         game.scene.start(nextScene);
-        game.scene.remove(currentScene);
+        game.scene.stop(currentScene);
     }
 };
 
@@ -108,7 +108,7 @@ create ()  {
     .setOrigin(0)
     .setInteractive()
 
-    this.scene.launch('Tuto');
+    this.scene.launch('Niveau');
 
 }
 

@@ -30,7 +30,7 @@ class Title extends Phaser.Scene {
         var biblio = this.add.image(0,0,'biblio').setOrigin(0);
         biblio.displayWidth = config.width; 
         biblio.displayHeight = config.height;
-        this.add.text(config.width/2, config.height/2,'Welcome.',
+        this.add.text(config.width/2, config.height/2,'Welcome to Aldelwick Library.',
         { font: "72px Times", fill: "#ffffff", align: "center"})
         .setOrigin(0.5);
         var button = this.add.text(config.width/2,config.height/2+100,

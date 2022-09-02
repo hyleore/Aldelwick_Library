@@ -28,7 +28,7 @@ preload(){
 }
 
 create(){
-    content = "Wonderful! Your transcriber training is now officially over. Thanks for taking part in it!";
+    content = "Wonderful! I think that's all we needed to do for now. On behalf of Aldelwick Library, I congratulate and thank you for your hard work!";
     textBox.start(content,35);
     textBox.on('complete', function() {
         var button = this.add.text(config.width/2, config.height/2,

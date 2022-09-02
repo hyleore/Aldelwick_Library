@@ -67,7 +67,7 @@ create ()  {
         fontFamily: 'Courier',
         fontSize: '30px',
         fontStyle: '',
-    });
+    })
     
     textBox = this.rexUI.add.textBox({
         x: 100,
@@ -108,7 +108,7 @@ create ()  {
     .setOrigin(0)
     .setInteractive()
 
-    this.scene.launch('Niveau');
+    this.scene.launch('Tuto');
 
 }
 

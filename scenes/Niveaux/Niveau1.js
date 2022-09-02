@@ -11,7 +11,7 @@ class Niveau1 extends Phaser.Scene{
      }
 
     create(){  
-        content = 'Let’s see how you get on with this first page! The first letter is an illuminated ‘A’! Elsewhere, the names ‘Aldenwick’ and ‘Elvenmere’, our town and the sea, are not capitalised. If you need help, click on the button with ‘?’';
+        content = 'Let’s see how you get on with this first page! The first letter is an illuminated ‘A’! Elsewhere, the names ‘Aldenwick’ and ‘Elvenmere’, our town and the sea, are not capitalised. If you need help, click on the button with ‘?’ Click on the arrow when you’re done.';
         reinitialiseInput();
 
         this.add.image(100, 250,'niv1').setScale(1/3).setOrigin(0);

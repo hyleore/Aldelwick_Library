@@ -80,7 +80,7 @@ create ()  {
     }
     }, this);
 
-    done = this.add.image(1720, 950, 'done').setScale(0.3).setOrigin(0);
+    done = this.add.image(1680, 940, 'done').setScale(0.45).setOrigin(0);
     done.setInteractive({ useHandCursor: true })
     .on('pointerdown', function (pointer)
     {

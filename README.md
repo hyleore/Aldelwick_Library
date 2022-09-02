@@ -6,7 +6,7 @@ The idea behind Aldelwick Library was to create **a puzzle-type game that would 
 After a tutorial, the player is expected to type down the transcription of a simple manuscript page.
 The game takes place in a fantasy-like world in order to take inspiration from medieval manuscripts while simplifying them.
 
-![Aldelwick Library Screencap](https://i.imgur.com/hRsUfP5.png "Aldelwick Library Level 1")
+![Aldelwick Library Screencap](https://i.imgur.com/VlLlrlH.png "Aldelwick Library Level 1")
 
 ***
 ## How to start
